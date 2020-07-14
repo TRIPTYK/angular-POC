@@ -13,8 +13,7 @@ const routes: Routes = [
   {
     component: TodosRouteComponent,
     path: 'todos',
-    canActivate: [//AuthGuardService
-    ]
+    canActivate: [AuthGuardService]
   }
 ];
 

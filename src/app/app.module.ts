@@ -12,6 +12,8 @@ import { TodosRouteComponent } from './pods/todos/todos.component';
 import { Datastore } from './service/datastore.service';
 import { AuthService } from './service/auth.service';
 import { ListComponent } from './pods/components/lists/list/list.component';
+import { ListFormComponent } from './pods/components/forms/list/list.component';
+import { FormatErrorPipe } from './pipes/format-error.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ListComponent } from './pods/components/lists/list/list.component';
     LoginComponent,
     TodosRouteComponent,
     TodoComponent,
-    ListComponent
+    ListFormComponent,
+    ListComponent,
+    FormatErrorPipe
   ],
   imports: [
     BrowserModule,

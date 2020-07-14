@@ -9,7 +9,10 @@ export class TodoComponent implements OnInit {
 
   @Input() todos;
 
-  constructor() { }
+  constructor() { 
+
+    
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,20 @@
 <h1>Liste des choses à faire ...</h1>
-<lists-list [lists]="lists" >
+
+<div *ngIf="selectedList">
+    <h2>Editer "{{selectedList.titre}}"</h2>
+    <span (click)="selectedList=null"><i>Mode création</i></span>
+</div>
+
+<div *ngIf="!selectedList">
+    <h2>Créer une chose à faire</h2>
+</div>
+
+
+<forms-list [list]="selectedList" (created)="getLists()">
     
+</forms-list>
+
+<h2>Liste</h2>
+<lists-list (deleted)="getLists()" (selected)="selectList($event)" [lists]="lists" >
+
 </lists-list>

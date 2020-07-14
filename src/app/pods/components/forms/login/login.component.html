@@ -8,5 +8,5 @@
         <input required type="password" name="password" formControlName="password">
     </div>
     <button class="button" type="submit">Login</button>
-    <div *ngIf="loginErr">{{loginErr.statusText}}</div>
+    <div *ngIf="loginErr">{{loginErr.detail}}</div>
 </form>

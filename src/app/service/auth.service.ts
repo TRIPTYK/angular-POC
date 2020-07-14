@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient,public router: Router) { }
 
   authenticate(email: string,password: string) {
-    const observer = this.http.post('http://localhost:8001/api/v1/auth/login', {email, password},{headers : this.headers});
+    const observer = this.http.post('http://todolist.triptyk.eu/api/v1/auth/login', {email, password},{headers : this.headers});
     return observer.toPromise().then(this.setSession);
   } 
 

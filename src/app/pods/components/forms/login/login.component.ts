@@ -23,10 +23,10 @@ export class LoginComponent implements OnInit {
     this.loginErr = null;
     try {
       await this.authService.authenticate(data.email, data.password);
+      this.router.navigate(['']);
     }catch(e) {
       this.loginErr = e;
     }
-    this.router.navigate(['']);
   }
 
   ngOnInit(): void {

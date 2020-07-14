@@ -15,15 +15,23 @@ export class TodosRouteComponent implements OnInit {
   constructor(private datastore: Datastore,private authService: AuthService) { }
 
   lists: List[];
+  selectedList: List;
 
   ngOnInit(): void {
+    this.getLists();
+  }
+
+  getLists() {
     this.datastore.findAll(List, {
-        page: { size: 5, number: 1 },
-        include : "todos"
+      include : "todos"
     },this.authService.headers).subscribe(
         (lists: JsonApiQueryData<List>) => this.lists = lists.getModels()
     );
   }
+  
+  selectList(value) {
+     this.selectedList = value;
+  } 
 }
 
 

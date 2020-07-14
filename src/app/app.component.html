@@ -1,6 +1,6 @@
 <router-outlet>
-    <li><a routerLink="/todos" routerLinkActive="active">Todo</a></li>
-
-    <li><a *ngIf="!authService.isAuthenticated" routerLink="/login" routerLinkActive="active">Login</a></li>
-    <li><a *ngIf="authService.isAuthenticated"  routerLinkActive="active" (click)="authService.invalidateSession()">Logout</a></li>
+    <li><a routerLink="/todos">Todo</a></li>
+    <li><a routerLink="/">Acceuil</a></li>
+    <li><a *ngIf="!authService.isAuthenticated" routerLink="/login" >Login</a></li>
+    <li><a *ngIf="authService.isAuthenticated"  (click)="authService.invalidateSession()">Logout</a></li>
 </router-outlet>

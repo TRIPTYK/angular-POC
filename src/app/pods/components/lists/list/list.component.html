@@ -1,5 +1,6 @@
 <li *ngFor="let list of lists">
-    {{list.titre}}
+    <span (click)="selected.emit(list)">{{list.titre}}</span>
+    <a (click)="onDeleteList(list)">&nbsp;X</a>
     <lists-todo [todos]="list.todos">
 
     </lists-todo>

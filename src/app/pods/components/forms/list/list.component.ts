@@ -13,11 +13,15 @@ export class ListFormComponent implements OnInit {
   private _list : List;
 
   @Output() created = new EventEmitter();
+  @Output() reset = new EventEmitter();
   @Input() set list(value : List) {
-    this._list = value;
-    this.listForm?.patchValue({
-      titre : this._list.titre
-    });
+    if(value){
+      this._list = value;
+      this.listForm?.patchValue({
+        titre : this._list.titre
+      });
+    }
+    
   };
 
   get list() : List {
@@ -35,8 +39,14 @@ export class ListFormComponent implements OnInit {
     });
   }
 
-
+  onReset() {
+    // if(this.list){
+    //   this.list.titre = ""
+    // }
+    this.reset.emit();
+  }
   onSubmit(data) {
+    this.reset.emit();
     if (this.list) {
       this.list.titre = data.titre;
       return this.list.save()

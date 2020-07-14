@@ -1,6 +1,8 @@
-<li *ngFor="let list of lists">
-    <span (click)="selected.emit(list)">{{list.titre}}</span>
-    <a (click)="onDeleteList(list)">&nbsp;X</a>
+<li class="listTodo" *ngFor="let list of lists">
+    <div>
+        <h3 (click)="selected.emit(list)">{{list.titre}}</h3>
+        <a class="deleteList" (click)="onDeleteList(list)">&nbsp;X</a>
+    </div>
     <lists-todo [todos]="list.todos">
 
     </lists-todo>

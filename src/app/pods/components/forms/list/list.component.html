@@ -1,12 +1,15 @@
 <form [formGroup]="listForm" class="forms-list" (ngSubmit)="onSubmit(listForm.value)">
+  <div class="form-element">
     <label>
-      List Name:
+      Titre de la liste
       <input type="text" formControlName="titre">
-      <div *ngIf="listForm.controls['titre'].invalid && (listForm.controls['titre'].dirty || listForm.controls['titre'].touched)"
-        class="alert alert-danger">
-          {{listForm.controls['titre'].errors | formatError}}
-      </div>
     </label>
+    <div class="errorUI" *ngIf="listForm.controls['titre'].invalid && (listForm.controls['titre'].dirty || listForm.controls['titre'].touched)"
+        class="alert alert-danger">
+        {{listForm.controls['titre'].errors | formatError}}
+    </div>
+  </div>
 
     <button [disabled]="!listForm.valid" type="submit">Envoyer</button>
+    <button class="reset" type="reset" (click)="onReset()">Annuler</button>
   </form>

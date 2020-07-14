@@ -1,6 +1,9 @@
-<router-outlet>
-    <li><a routerLink="/todos">Todo</a></li>
-    <li><a routerLink="/">Acceuil</a></li>
-    <li><a *ngIf="!authService.isAuthenticated" routerLink="/login" >Login</a></li>
-    <li><a *ngIf="authService.isAuthenticated"  (click)="authService.invalidateSession()">Logout</a></li>
+<router-outlet class="menuUI">
+    <li><a *ngIf="authService.isAuthenticated" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Accueil</a></li>
+    <li><a *ngIf="authService.isAuthenticated" routerLink="/todos" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Todos</a></li>
+    <li><a *ngIf="!authService.isAuthenticated" routerLink="/login">Connexion</a></li>
+    <li><a *ngIf="authService.isAuthenticated" (click)="authService.invalidateSession()">Déconnexion</a></li>
 </router-outlet>
+<div class="contentHome" *ngIf="authService.isAuthenticated" >
+    <button routerLink="/todos" routerLinkActive="hide-link" [routerLinkActiveOptions]="{exact:true}">Vers la page des todos</button>
+</div>

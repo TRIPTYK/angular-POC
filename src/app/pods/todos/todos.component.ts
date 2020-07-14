@@ -23,7 +23,8 @@ export class TodosRouteComponent implements OnInit {
 
   getLists() {
     this.datastore.findAll(List, {
-      include : "todos"
+      include : "todos",
+      sort: '-list.createdAt'
     },this.authService.headers).subscribe(
         (lists: JsonApiQueryData<List>) => this.lists = lists.getModels()
     );

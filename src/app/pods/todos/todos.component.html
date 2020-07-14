@@ -1,8 +1,7 @@
 <h1>Liste des choses à faire ...</h1>
 
 <div *ngIf="selectedList">
-    <h2>Editer "{{selectedList.titre}}"</h2>
-    <span (click)="selectedList=null"><i>Mode création</i></span>
+    <h2>Editer la liste <strong>{{selectedList.titre}}</strong></h2>
 </div>
 
 <div *ngIf="!selectedList">
@@ -10,7 +9,7 @@
 </div>
 
 
-<forms-list [list]="selectedList" (created)="getLists()">
+<forms-list [list]="selectedList" (reset)="selectedList=null" (created)="getLists()">
     
 </forms-list>
 

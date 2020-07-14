@@ -1,1 +1,237 @@
 /* You can add global styles to this file, and also import other style files */
+html, body{
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ecf0f1;
+}
+
+a{
+  text-decoration: none;
+  color: #2c3e50;
+}
+h1{
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #34495e;
+}
+
+h2{
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1.5px;
+  color: #3498db;
+}
+h3{
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+  color: #34495e;
+  text-transform: uppercase;
+}
+
+label{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  font-size: 12px;
+  padding: 8px 10px 5px 12px;
+  width: 320px;
+  color: #34495e;
+  margin-bottom: 16px;
+  transition: all .2s ease-in-out;
+}
+label:focus-within{
+  color: #3498db;
+}
+input[type="text"], input[type="email"], input[type="password"]{
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: none;
+  border: none;
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
+input:focus{
+  outline: none;
+}
+
+
+button{
+  background-color: #3498db;
+  transition: all .2s ease-in-out;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border:none;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+button:hover{
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+}
+button:focus{
+  outline: none;
+}
+
+.menuUI{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  justify-content: flex-end;
+  /* padding: 0 20px; */
+  background-color: #3498db;
+}
+.menuUI li{
+  margin: 0;
+  padding: 0;
+}
+.menuUI > li a {
+  display: block;
+  transition: all .2s ease-in-out;
+  padding: 25px 30px;
+  color: white;
+  font-weight: 500;
+}
+
+.menuUI > li a:hover{
+  background-color: rgba(7, 7, 7, 0.192);
+}
+.active-link{
+  background-color: rgba(7, 7, 7, 0.192);
+}
+.hide-link{
+  display: none;
+}
+
+.menuUI > li:last-of-type a{
+  cursor: pointer;
+  /* color: #f7281186; */
+}
+app-root{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+app-login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+app-login h1{
+  margin-bottom: 50px;
+  font-size: 3rem;
+}
+app-login form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+app-login form button{
+  margin-top: 20px;
+}
+app-login form > div{
+  position: relative;
+}
+.errorLogin{
+  position: absolute;
+  bottom:-4px;
+  font-size: .8rem;
+  font-style: italic;
+  color: #e74c3c;
+}
+
+app-todos{
+  padding: 0 80px;
+  flex-grow: 1;
+}
+.forms-list{
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.forms-list > .form-element{
+  position: relative;
+}
+
+.forms-list button{
+  margin-left: 20px;
+}
+
+.forms-list > .form-element label{
+  margin-bottom: 0;
+}
+
+.forms-list > .form-element .alert.alert-danger{
+  position: absolute;
+  margin-top: 4px;
+  left: 5px;
+}
+
+lists-list, lists-todo > ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+app-todos{
+  margin-bottom: 50px;
+}
+
+.listTodo{
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
+  background-color: #fff;
+  padding: 30px 40px;
+  margin-bottom: 12px;
+}
+
+.listTodo > div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deleteList{
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor:pointer;
+  transition: all .2s ease-in-out;
+}
+
+.deleteList:hover{
+  color: #e74c3c;
+}
+
+.todos{
+  margin-bottom: 5px;
+  margin-left: 24px;
+  position: relative;
+}
+
+.todos::before{
+  content: '';
+  width: 6px;
+  height: 6px;
+  top: 4px;
+  transform: translateY(50%);
+  left: -16px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #3498db;
+}
+
+button.reset{
+  background-color: #34495e;
+}
+
+.contentHome{
+  flex-grow:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

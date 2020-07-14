@@ -23,9 +23,14 @@ export class LoginComponent implements OnInit {
     this.loginErr = null;
     try {
       await this.authService.authenticate(data.email, data.password);
-      this.router.navigate(['']);
-    }catch(e) {
-      this.loginErr = e;
+      this.router.navigate(['todos']);
+    }catch(e) {   
+
+      if(e.status == 401){
+        this.loginErr = "Le mot de passe ou login n'est pas correct"
+      } else{
+        this.loginErr = "Le formulaire de login contient une erreur"
+      }
     }
   }
 
